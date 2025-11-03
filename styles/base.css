@@ -1,0 +1,165 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap');
+
+/* Font Families:
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+*/
+
+/* --- Global Styles --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* --- Header and Navigation --- */
+header {
+    background-color: #003366; /* Dark blue */
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #FFC72C; /* Gold accent */
+}
+
+#course-title {
+    display: block; /* Required by assignment */
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    display: flex; /* Flexbox for navigation */
+    justify-content: center;
+    background-color: #004a99; /* Slightly lighter blue */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #FFC72C; /* Gold hover */
+    color: #003366; /* Dark blue text */
+}
+
+/* --- Main Content and Cards --- */
+main {
+    max-width: 960px; /* Limit width */
+    margin: 2rem auto; /* Center horizontally */
+    padding: 0 1rem;
+    
+    /* CSS Grid Layout - 1 column by default (mobile-first) */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Media query for wider screens (tablet and up) */
+@media (min-width: 768px) {
+    main {
+        /* 2 columns on larger screens: 2/3 for main, 1/3 for sidebar */
+        grid-template-columns: 2fr 1fr; 
+    }
+}
+
+/* This new div holds the stacked cards on the left */
+.main-content-column {
+    display: grid;
+    gap: 1.5rem; /* This creates the space between the "About Me" and "Location" cards */
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    /* clear:fix for floated images inside */
+    overflow: auto; 
+}
+
+.card h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #003366;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+/* --- Card-Specific Images --- */
+.profile-pic {
+    float: right;
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.flag-pic {
+    float: left;
+    width: 120px;
+    height: auto;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #eee;
+}
+
+/* --- Resources Card (Sidebar) --- */
+.card#resources {
+    background-color: #fffbf2; /* Creamy background like the example */
+    border-left: 4px solid #FFC72C; /* Gold accent border */
+}
+
+.card#resources img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto 1rem; /* Center images */
+}
+
+.card#resources ul {
+    list-style-type: none; /* Removes bullets */
+    padding-left: 0;
+}
+
+.card#resources li {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.card#resources a {
+    color: #004a99;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card#resources a:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+#lastModified {
+    color: #FFC72C;
+    font-size: 0.8rem;
+    margin-top: -10px;
+}
