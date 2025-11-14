@@ -1,0 +1,56 @@
+/* --- Estilos para Pantalla Grande --- */
+
+@media screen and (min-width: 768px) {
+
+    /* --- Header y Nav (Escritorio) --- */
+    
+    #menuButton {
+        display: none; 
+    }
+
+    #mainNav {
+        display: flex; 
+        grid-column: 2 / 3; 
+        grid-row: 1 / 2;
+        justify-content: flex-end;
+        align-items: center; /* ✨ Centrar enlaces verticalmente */
+    }
+
+    #mainNav.menu-open {
+        display: flex; 
+    }
+
+    #mainNav a {
+        border-top: none; 
+        padding: 0 1.2rem; /* ✨ Más espaciado */
+        color: white; /* ✨ Aseguramos que el texto sea blanco */
+        text-decoration: none;
+        transition: color 0.3s; /* ✨ Transición solo para el color */
+    }
+
+    #mainNav a:hover {
+        /* ✨ En escritorio, solo cambiamos el color del texto */
+        background-color: transparent; /* Sin fondo en hover */
+        color: #D2B48C; /* Color de acento */
+        text-decoration: none; /* Quitamos cualquier subrayado */
+    }
+
+    /* --- Main (Escritorio) --- */
+    main {
+        max-width: 1200px; 
+        margin: 2rem auto; /* ✨ Más margen superior */
+        gap: 2rem; /* ✨ Más espacio entre tarjetas */
+
+        /* El grid responsivo (sin cambios) */
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    main h2 {
+        grid-column: 1 / -1; 
+        position: static; 
+        left: auto;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 2.8rem; /* ✨ Título más grande en escritorio */
+    }
+}
