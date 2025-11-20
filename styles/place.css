@@ -1,0 +1,132 @@
+/* :root define las variables globales */
+:root {
+    --primary-color: #D91023; /* Rojo Perú */
+    --secondary-color: #333;
+    --bg-color: #f4f4f4;
+    --card-bg: #ffffff;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    line-height: 1.5;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Hero Image Styles */
+.hero {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.hero-label {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Tarjetas (Diseño Móvil por defecto) */
+.data-card, .weather-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center; /* Centrado para móvil */
+}
+
+h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    text-align: left;
+    display: inline-block; /* Para alinear lista centrada pero texto izquierda */
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Icono SVG del clima (Visible en móvil) */
+.weather-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.weather-data p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+/* --- MEDIA QUERY (Vista de Escritorio) --- */
+@media (min-width: 768px) {
+    
+    /* Layout en Grid: Dos columnas */
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .data-card, .weather-card {
+        margin-bottom: 0;
+        text-align: left; /* Alinear a la izquierda en escritorio */
+    }
+
+    /* Ocultar el SVG en escritorio (se usará el pseudo-elemento) */
+    .weather-icon {
+        display: none;
+    }
+
+    /* REQUISITO: Pseudo-elemento para el icono en escritorio */
+    .weather-card h2::after {
+        content: " ⛅"; /* El emoticono requerido */
+        font-size: 1.5rem;
+        margin-left: 10px;
+    }
+}
