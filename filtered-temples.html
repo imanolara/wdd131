@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Filtered Temple Album</title>
+        <meta name="description" content="W04 Assignment: Picture Album Enhancement">
+        <meta name="author" content="Imanol Aranda Yauri">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="styles/filtered-temples.css">
+        <link rel="stylesheet" href="styles/temples-large.css"> 
+        
+        <script src="scripts/filtered-temples.js" defer></script>
+    </head>
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button id="menuButton">☰</button>
+        <nav id="mainNav">
+            <a href="#" id="home">Home</a>
+            <a href="#" id="old">Old</a>
+            <a href="#" id="new">New</a>
+            <a href="#" id="large">Large</a>
+            <a href="#" id="small">Small</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="current-filter-title">Home</h2>
+        
+        <div id="temples-container"></div>
+    </main>
+
+    <footer>
+        <p>
+            &copy;<span id="currentYear"></span> | Imanol Aranda Yauri | Lima, Perú
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
